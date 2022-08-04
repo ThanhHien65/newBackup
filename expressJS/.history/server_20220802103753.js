@@ -1,0 +1,12 @@
+const express = require("express");
+const app = express();
+const port = 3000;
+app.get("/", (req, res) => {
+  //   res.send(res.json());
+  //   res.json("test");
+  res.json({ id: "1" });
+
+});
+app.listen(port, () => {
+  console.log(`listen port ${port}`);
+});
