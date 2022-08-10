@@ -8,6 +8,6 @@ services:
       context: .
       target: backend
     volumes:
-      - ./:/app
+      - ./BE:/app
     ports:
       - 5000:5000
