@@ -8,7 +8,7 @@ COPY . ./
 RUN rm -rf node_modules
 RUN npm install 
 RUN npm install -g npm@8.16.0
-RUN npm install nodemon -g
+RUN npm install nodemon --save-dev
 # Copy app files
 # Expose port
 EXPOSE 5000
