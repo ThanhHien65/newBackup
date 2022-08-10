@@ -20,7 +20,14 @@ exports.getAllinfoserver = (req, res) => {
 exports.statusBackupday = (req, res) => {
   Backup.statusBackupday((result, err) => {
     console.log(parseIp(req), moment().format("MM ddd, YYYY hh:mm:ss a"));
-    result != undefined ? res.send(result) : res.send(err);
+    if(result.code === undefined){
+      res.send(result)
+    }else if(result.code ==="ECONNREFUSED"){
+      res.send({Error:"Mysql has problem"});
+    }
+    else{
+      res.send(result)
+    }
   });
 };
 exports.statusASPBackupday = (req, res) => {

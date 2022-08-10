@@ -1,5 +1,4 @@
 "use strict";
-const e = require("cors");
 const sql = require("./db.js");
 const Backup = (backup) => {
   console.log(Backup);

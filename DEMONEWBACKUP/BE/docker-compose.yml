@@ -12,4 +12,17 @@ services:
     ports:
       - 5000:5000
     depends_on:
-      - mysql_django
+      - db
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: mysql_bigdata
+    ports:
+        - 3307:3306
+    restart: always
+    volumes:
+        - /home/mysql/data:/var/lib/mysql
+    environment:
+      MYSQL_USER : test
+      MYSQL_PASSWORD : P@ssw0rd
+      MYSQL_ROOT_PASSWORD: P@ssw0rd
