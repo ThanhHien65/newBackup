@@ -1,0 +1,18 @@
+FROM node:16-alpine AS development
+ENV NODE_ENV development
+# Add a work directory
+WORKDIR /app
+# Copy app files
+COPY . ./
+# Cache and Install dependencies
+RUN rm -rf node_modules
+RUN npm install 
+RUN npm install express --save
+RUN npm install mysql --save
+RUN npm install body-parser --save
+RUN npm i nodemon --save-dev
+# Copy app files
+# Expose port
+EXPOSE 5000
+# Start the app
+CMD ["nodemon", "server.js"]

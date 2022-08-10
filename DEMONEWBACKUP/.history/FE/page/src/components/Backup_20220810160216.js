@@ -17,7 +17,7 @@ const Backup = () => {
         console.log(err);
       });
     axios
-      .get("http://10.0.0.20:5000/aspbackupday")
+      .get("http://10.0.0.13:5000/aspbackupday")
       .then((res) => {
         setdiskASPBackup(res.data);
       })
@@ -62,7 +62,7 @@ const Backup = () => {
     };
     const checked = () => {
       axios
-        .put("http://10.0.0.20:5000/checked", {
+        .put("http://10.0.0.13:5000/checked", {
           id: aBackup[0].id,
         })
         .then(function (response) {
