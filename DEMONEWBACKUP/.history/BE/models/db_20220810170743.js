@@ -6,11 +6,11 @@ const connection = mysql.createConnection({
   password: "P@ssw0rd",
   database: "bigbackup",
 });
-connection.connect((err) => {
-  if (err) {
-    console.log("error connection : " + err.stack);
-    // throw err;
-  }
-  console.log("connected as is " + connection.threadId);
-});
+// connection.connect((err) => {
+//   if (err) {
+//     console.log("error connection : " + err.stack);
+//     // throw err;
+//   }
+//   console.log("connected as is " + connection.threadId);
+// });
 module.exports = connection;

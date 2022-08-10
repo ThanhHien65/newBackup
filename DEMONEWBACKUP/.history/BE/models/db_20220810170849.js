@@ -9,7 +9,7 @@ const connection = mysql.createConnection({
 connection.connect((err) => {
   if (err) {
     console.log("error connection : " + err.stack);
-    // throw err;
+    throw err;
   }
   console.log("connected as is " + connection.threadId);
 });
