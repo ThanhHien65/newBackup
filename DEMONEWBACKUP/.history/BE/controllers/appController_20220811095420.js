@@ -13,46 +13,31 @@ const parseIp = (req) => {
 };
 exports.getAllinfoserver = (req, res) => {
   Backup.getAllinfoserver((result, err) => {
-    console.log(
-      "GET-ALLINFORSERVER",
-      parseIp(req),
-      moment().format("MM ddd, YYYY hh:mm:ss a")
-    );
+    console.log("GET-ALLINFORSERVER",parseIp(req), moment().format("MM ddd, YYYY hh:mm:ss a"));
     result != undefined ? res.send(result) : res.send(err);
   });
 };
 exports.statusBackupday = (req, res) => {
   Backup.statusBackupday((result, err) => {
-    console.log(
-      "GET-STATUS-BACKUPDAY",
-      parseIp(req),
-      moment().format("MM ddd, YYYY hh:mm:ss a")
-    );
-    if (result.code === undefined) {
-      res.send(result);
-    } else if (result.code === "ECONNREFUSED") {
-      res.send({ Error: "Mysql has problem" });
-    } else {
-      res.send(result);
+    // console.log("GET-STATUS-BACKUPDAY",parseIp(req), moment().format("MM ddd, YYYY hh:mm:ss a"));
+    if(result.code === undefined){
+      res.send(result)
+    }else if(result.code ==="ECONNREFUSED"){
+      res.send({Error:"Mysql has problem"});
+    }
+    else{
+      res.send(result)
     }
   });
 };
 exports.statusASPBackupday = (req, res) => {
   Backup.statusASPBackupday((result, err) => {
-    console.log(
-      "GET-STATUS-ASPBACKUPDAY",
-      parseIp(req),
-      moment().format("MM ddd, YYYY hh:mm:ss a")
-    );
+    console.log("GET-STATUS-ASPBACKUPDAY",parseIp(req), moment().format("MM ddd, YYYY hh:mm:ss a"));
     result != undefined ? res.send(result) : res.send(err);
   });
 };
 exports.changStatusdetail = (req, res) => {
-  console.log(
-    "CHECKED",
-    parseIp(req),
-    moment().format("MM ddd, YYYY hh:mm:ss a")
-  );
+  console.log("CHECKED",parseIp(req), moment().format("MM ddd, YYYY hh:mm:ss a"));
   Backup.changeStatus(req.body.id, (result) => {
     result.code === undefined
       ? res.send("update success")

@@ -19,12 +19,11 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     container_name: mysql_backup
     ports:
-      - 3307:3306
+        - 3307:3306
     restart: always
     volumes:
-      - /home/mysql/data:/var/lib/mysql
-      - "/etc/localtime:/etc/localtime:ro"
+        - /home/mysql/data:/var/lib/mysql
     environment:
-      MYSQL_USER: test
-      MYSQL_PASSWORD: P@ssw0rd
+      MYSQL_USER : test
+      MYSQL_PASSWORD : P@ssw0rd
       MYSQL_ROOT_PASSWORD: P@ssw0rd

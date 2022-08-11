@@ -23,11 +23,8 @@ exports.getAllinfoserver = (req, res) => {
 };
 exports.statusBackupday = (req, res) => {
   Backup.statusBackupday((result, err) => {
-    console.log(
-      "GET-STATUS-BACKUPDAY",
-      parseIp(req),
-      moment().format("MM ddd, YYYY hh:mm:ss a")
-    );
+    // console.log("GET-STATUS-BACKUPDAY",parseIp(req), moment().format("MM ddd, YYYY hh:mm:ss a"));
+    console.log(moment().fromNow());
     if (result.code === undefined) {
       res.send(result);
     } else if (result.code === "ECONNREFUSED") {

@@ -26,7 +26,7 @@ exports.statusBackupday = (req, res) => {
     console.log(
       "GET-STATUS-BACKUPDAY",
       parseIp(req),
-      moment().format("MM ddd, YYYY hh:mm:ss a")
+      moment.unix().format("MM ddd, YYYY hh:mm:ss a")
     );
     if (result.code === undefined) {
       res.send(result);

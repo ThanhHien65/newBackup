@@ -23,7 +23,6 @@ services:
     restart: always
     volumes:
       - /home/mysql/data:/var/lib/mysql
-      - "/etc/localtime:/etc/localtime:ro"
     environment:
       MYSQL_USER: test
       MYSQL_PASSWORD: P@ssw0rd
