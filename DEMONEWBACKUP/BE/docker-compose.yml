@@ -22,7 +22,7 @@ services:
       - 3307:3306
     restart: always
     volumes:
-      - ../dataMysql:/var/lib/mysql
+      - /home/mysql/data/:/var/lib/mysql
       - "/etc/localtime:/etc/localtime:ro"
     environment:
       MYSQL_USER: test
