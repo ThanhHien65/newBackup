@@ -8,7 +8,7 @@ const Backup = () => {
   const [isShow, setShow] = useState(true);
   const [aBackup, setAbackup] = useState([]);
   useEffect(() => {
-    document.title = "Backup";
+    document.title = "test";
     axios
       .get(`http://10.0.0.20:5000/backupday`)
       .then((response) => {

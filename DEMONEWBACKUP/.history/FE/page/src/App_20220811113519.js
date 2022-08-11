@@ -5,8 +5,8 @@ import Backup from "./components/Backup";
 import Monitor from "./components/Monitor";
 import Traffic from "./components/Traffic";
 import Login from "./components/Login";
+import React, { useEffect } from "react";
 function App() {
-  document.title = "Dashboard";
   return (
     <div className="App">
       <Router>

@@ -6,7 +6,7 @@ import Monitor from "./components/Monitor";
 import Traffic from "./components/Traffic";
 import Login from "./components/Login";
 function App() {
-  document.title = "Dashboard";
+  document.title = "Das";
   return (
     <div className="App">
       <Router>
