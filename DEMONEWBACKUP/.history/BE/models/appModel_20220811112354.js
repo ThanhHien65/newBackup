@@ -56,11 +56,13 @@ Backup.changeStatus = (status, result) => {
     if (err) {
       console.log(err);
     }
+    console.log("Update bigdata");
   });
   sql.query(mysql, (err, res) => {
     if (err) {
       console.log(err);
     }
+    console.log("Updated mysql");
   });
 };
 

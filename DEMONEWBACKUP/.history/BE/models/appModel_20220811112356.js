@@ -61,6 +61,7 @@ Backup.changeStatus = (status, result) => {
     if (err) {
       console.log(err);
     }
+    console.log("Updated mysql");
   });
 };
 
