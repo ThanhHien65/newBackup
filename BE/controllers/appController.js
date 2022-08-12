@@ -53,7 +53,7 @@ exports.changStatusdetail = (req, res) => {
       parseIp(req),
       `${moment().format("YYYY-MM-ddd HH:mm:ss")} ||`,
       "[PUT-STATUS-CHECKED]",
-      ` || [ID: ${result[0].id}] || [SERVER: ${result[0].hostname}] || [IP:${result[0].ipaddress}]`
+      `|| [ID: ${result[0].id}] || [SERVER: ${result[0].hostname}] || [IP:${result[0].ipaddress}]`
     );
   });
   Backup.changeStatus(req.body.id, (result) => {
