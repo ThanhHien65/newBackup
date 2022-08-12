@@ -1,7 +1,7 @@
 "use strict";
 const Backup = require("../models/appModel.js");
 const moment = require("moment");
-const timedetail = `${moment().format("YYYY-MM-ddd HH:mm:ss")} ||`;
+const timedetail = moment().format("YYYY-MM-ddd HH:mm:ss");
 const parseIp = (req) => {
   var ip =
     req.headers["x-forwarded-for"] ||
@@ -20,7 +20,7 @@ exports.getAllinfoserver = (req, res) => {
 };
 exports.statusBackupday = (req, res) => {
   Backup.statusBackupday((result, err) => {
-    console.log(parseIp(req), timedetail, "[GET-STATUS-BACKUPDAY]");
+    console.log(parseIp(req), timedetail);
     if (result.code === undefined) {
       res.send(result);
     } else if (result.code === "ECONNREFUSED") {
@@ -32,12 +32,12 @@ exports.statusBackupday = (req, res) => {
 };
 exports.statusASPBackupday = (req, res) => {
   Backup.statusASPBackupday((result, err) => {
-    console.log(parseIp(req), timedetail, "[GET-STATUS-ASPBACKUPDAY]");
+    console.log("[GET-STATUS-ASPBACKUPDAY]", parseIp(req), timedetail);
     result != undefined ? res.send(result) : res.send(err);
   });
 };
 exports.changStatusdetail = (req, res) => {
-  console.log(parseIp(req), timedetail, "[PUT-STATUS-CHECKED]");
+  console.log("[PUT-STATUS-CHECKED]", parseIp(req), timedetail);
   Backup.changeStatus(req.body.id, (result) => {
     result.code === undefined
       ? res.send("update success")

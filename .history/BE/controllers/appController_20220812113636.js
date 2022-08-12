@@ -1,7 +1,7 @@
 "use strict";
 const Backup = require("../models/appModel.js");
 const moment = require("moment");
-const timedetail = `${moment().format("YYYY-MM-ddd HH:mm:ss")} ||`;
+const timedetail = `$moment().format("YYYY-MM-ddd HH:mm:ss")`;
 const parseIp = (req) => {
   var ip =
     req.headers["x-forwarded-for"] ||

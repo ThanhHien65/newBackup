@@ -1,7 +1,7 @@
 "use strict";
 const Backup = require("../models/appModel.js");
 const moment = require("moment");
-const timedetail = `${moment().format("YYYY-MM-ddd HH:mm:ss")} ||`;
+const timedetail = moment().format("YYYY-MM-ddd HH:mm:ss");
 const parseIp = (req) => {
   var ip =
     req.headers["x-forwarded-for"] ||
@@ -37,7 +37,7 @@ exports.statusASPBackupday = (req, res) => {
   });
 };
 exports.changStatusdetail = (req, res) => {
-  console.log(parseIp(req), timedetail, "[PUT-STATUS-CHECKED]");
+  console.log( parseIp(req), timedetail);
   Backup.changeStatus(req.body.id, (result) => {
     result.code === undefined
       ? res.send("update success")
