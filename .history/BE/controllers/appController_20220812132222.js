@@ -9,14 +9,14 @@ const parseIp = (req) => {
     req.connection.socket.remoteAddress;
   ip = ip.split(",")[0];
   ip = ip.split(":").slice(-1);
-  return `IPCalled : ${ip[0]}`;
+  return `|| ${ip[0]} ||`;
 };
 exports.getAllinfoserver = (req, res) => {
   Backup.getAllinfoserver((result, err) => {
     console.log(
-      "GET-ALLINFORSERVER",
       parseIp(req),
-      moment().format("MM ddd, YYYY hh:mm:ss a")
+      `${moment().format("YYYY-MM-ddd HH:mm:ss")} ||`,
+      `[GET-ALLINFORSERVER]`
     );
     result != undefined ? res.send(result) : res.send(err);
   });
@@ -24,9 +24,9 @@ exports.getAllinfoserver = (req, res) => {
 exports.statusBackupday = (req, res) => {
   Backup.statusBackupday((result, err) => {
     console.log(
-      "GET-STATUS-BACKUPDAY",
       parseIp(req),
-      moment().format("MM ddd, YYYY hh:mm:ss a")
+      `${moment().format("YYYY-MM-ddd HH:mm:ss")} ||`,
+      "[GET-STATUS-BACKUPDAY]"
     );
     if (result.code === undefined) {
       res.send(result);
@@ -40,18 +40,18 @@ exports.statusBackupday = (req, res) => {
 exports.statusASPBackupday = (req, res) => {
   Backup.statusASPBackupday((result, err) => {
     console.log(
-      "GET-STATUS-ASPBACKUPDAY",
       parseIp(req),
-      moment().format("MM ddd, YYYY hh:mm:ss a")
+      `${moment().format("YYYY-MM-ddd HH:mm:ss")} ||`,
+      "[GET-STATUS-ASPBACKUPDAY]"
     );
     result != undefined ? res.send(result) : res.send(err);
   });
 };
 exports.changStatusdetail = (req, res) => {
   console.log(
-    "CHECKED",
     parseIp(req),
-    moment().format("MM ddd, YYYY hh:mm:ss a")
+    `${moment().format("YYYY-MM-ddd HH:mm:ss")} ||`,
+    "[PUT-STATUS-CHECKED]"
   );
   Backup.changeStatus(req.body.id, (result) => {
     result.code === undefined
