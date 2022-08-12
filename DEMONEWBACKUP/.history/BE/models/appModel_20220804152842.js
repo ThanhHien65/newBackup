@@ -1,7 +1,0 @@
-"user strict";
-const sql = require("./db.js");
-
-Backup.getAllinfoserver = (result) =>{
-    sq
-}
-
