@@ -48,11 +48,14 @@ exports.statusASPBackupday = (req, res) => {
   });
 };
 exports.changStatusdetail = (req, res) => {
-  console.log(
-    parseIp(req),
-    `${moment().format("YYYY-MM-ddd HH:mm:ss")} ||`,
-    "[PUT-STATUS-CHECKED]"
-  );
+  Backup.infomationAserver(req.body.id, (result) => {
+    console.log(
+      parseIp(req),
+      `${moment().format("YYYY-MM-ddd HH:mm:ss")} ||`,
+      "[PUT-STATUS-CHECKED]",
+      ` || [ID: ${result[0].id}] || [SERVER: ${result[0].hostname}] || [IP:${result[0].ipaddress}]`
+    );
+  });
   Backup.changeStatus(req.body.id, (result) => {
     result.code === undefined
       ? res.send("update success")

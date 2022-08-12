@@ -63,5 +63,9 @@ Backup.changeStatus = (status, result) => {
     }
   });
 };
-
+Backup.infomationAserver = (id, result) => {
+  sql.query(`SELECT * FROM information WHERE id='${id}'`, (err, res) => {
+    err ? console.log(err) : result(res);
+  });
+};
 module.exports = Backup;
