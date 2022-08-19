@@ -30,7 +30,7 @@ function App() {
     window.onload = () => {
       const token = localStorage.getItem("AccessToken");
       const instance = axios.create({
-        baseURL: "http://10.0.0.20:5000",
+        baseURL: "http://localhost:5000",
         timeout: 1000,
         headers: {
           Authorization: "Bearer " + token,
