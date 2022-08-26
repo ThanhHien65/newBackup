@@ -53,7 +53,7 @@ const Backup = () => {
     };
     const checked = (e) => {
       axios
-        .put("http://118.69.134.97:5000/checked", {
+        .put("https://api.aimtest.tk/checked", {
           id: aBackup[0].id,
         })
         .then(function (response) {

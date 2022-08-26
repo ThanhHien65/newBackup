@@ -21,7 +21,7 @@ const Login = () => {
   const submit = (e) => {
     e.preventDefault();
     axios
-      .post("http://118.69.134.97:5000/log", {
+      .post("https://api.aimtest.tk/log", {
         username: user,
         password: password,
       })
