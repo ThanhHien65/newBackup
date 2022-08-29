@@ -34,7 +34,7 @@ function App() {
       </Router>
     );
   };
-  if (localStorage.getItem("AccessToken")) {
+  if (localStorage.getItem("AccessToken") !== null) {
     window.onload = () => {
       const token = localStorage.getItem("AccessToken");
       const instance = axios.create({
@@ -44,19 +44,18 @@ function App() {
           Authorization: "Bearer " + token,
         },
       });
-      instance
-        .get("/token")
-        .then((response) => {
+      instance.get("/token").then((response) => {
+        if (response.status === 200) {
           setfail(!fail);
           setBoard(!Showboard);
           setBackupDay(response.data.backupday);
           setdiskASPBackup(response.data.aspbackup);
-        })
-        .catch((err) => {
+        } else {
           localStorage.removeItem("AccessToken");
           setfail(!fail);
           setBoard(!Showboard);
-        });
+        }
+      });
     };
   }
   return (
