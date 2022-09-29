@@ -10,7 +10,7 @@ services:
     volumes:
       - ./:/app
       - "/etc/localtime:/etc/localtime:ro"
-      - "/home/image/monitor/:/img"
+      - 
     ports:
       - 5000:5000
     depends_on:

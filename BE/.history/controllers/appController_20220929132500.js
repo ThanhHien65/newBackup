@@ -235,7 +235,7 @@ exports.GetAccount = (req, res) => {
   }
 };
 exports.ImageMonitor = (req, res) => {
-  const directoryPath = "/img/";
+  const directoryPath = "/home/image/monitor/";
   res.status(200).sendFile(directoryPath + req.params.pic);
   console.log(
     parseIp(req),
