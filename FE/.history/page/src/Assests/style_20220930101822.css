@@ -65,7 +65,7 @@
 .container_content table th:first-child {
   width: 4%;
 }
-.container_content table td {
+.container_content table td tr {
   background-color: #ffff;
   text-align: center;
   overflow: hidden;

@@ -68,7 +68,7 @@ const Backup = () => {
                   <h1>
                     BIGDATA : not Checked
                     <br />
-                    {item.status_bigdata.length > 20 ? (
+                    {item.status_bigdata.length > 30 ? (
                       <h1
                         style={{
                           fontSize: "1.5rem",
@@ -89,7 +89,7 @@ const Backup = () => {
                   <h1>
                     BIGDATA : Checked
                     <br />
-                    {item.status_bigdata.length > 20 ? (
+                    {item.status_bigdata.length > 10 ? (
                       <h1
                         style={{
                           fontSize: "1.5rem",

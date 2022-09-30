@@ -68,9 +68,9 @@
 .container_content table td {
   background-color: #ffff;
   text-align: center;
-  overflow: hidden;
+  /* overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
   padding: 1rem;
   font-size: 1.5rem;
   border-bottom: 1px solid #f2f4f6;

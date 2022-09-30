@@ -27,16 +27,15 @@ const Backup = () => {
                 {item.fvalue == 0 ? (
                   <h1>
                     FILEBACKUP : not Checked <br />
-                    {item.status_filebackup.length > 30 ? (
+                    {item.status_filebackup.length > 20 ? (
                       <h1
                         style={{
                           fontSize: "1.5rem",
                           textTransform: "capitalize",
-                          fontWeight: "normal",
-                          color: "red",
+                          fontWeight:'normal',
                         }}
                       >
-                        + {item.status_filebackup}
+                        STATUS : ${item.status_filebackup}
                       </h1>
                     ) : (
                       ""
@@ -45,105 +44,31 @@ const Backup = () => {
                 ) : item.fvalue == null ? (
                   ""
                 ) : (
-                  <h1>
-                    FILEBACKUP : Checked
-                    <br />
-                    {item.status_filebackup.length > 30 ? (
-                      <h1
-                        style={{
-                          fontSize: "1.5rem",
-                          textTransform: "capitalize",
-                          fontWeight: "normal",
-                          color: "black",
-                        }}
-                      >
-                        + {item.status_filebackup}
-                      </h1>
-                    ) : (
-                      ""
-                    )}
-                  </h1>
+                  <h1>FILEBACKUP : Checked</h1>
                 )}
                 {item.bvalue == 0 ? (
                   <h1>
-                    BIGDATA : not Checked
-                    <br />
-                    {item.status_bigdata.length > 20 ? (
-                      <h1
-                        style={{
-                          fontSize: "1.5rem",
-                          textTransform: "capitalize",
-                          fontWeight: "normal",
-                          color: "red",
-                        }}
-                      >
-                        + {item.status_bigdata}
-                      </h1>
-                    ) : (
-                      ""
-                    )}
+                    BIGDATA : not Checked <br />
+                    {item.status_bigdata.length > 20
+                      ? `STATUS : ${item.status_bigdata}`
+                      : ""}
                   </h1>
                 ) : item.bvalue == null ? (
                   ""
                 ) : (
-                  <h1>
-                    BIGDATA : Checked
-                    <br />
-                    {item.status_bigdata.length > 20 ? (
-                      <h1
-                        style={{
-                          fontSize: "1.5rem",
-                          textTransform: "capitalize",
-                          fontWeight: "normal",
-                          color: "black",
-                        }}
-                      >
-                        + {item.status_bigdata}
-                      </h1>
-                    ) : (
-                      ""
-                    )}
-                  </h1>
+                  <h1>BIGDATA : Checked</h1>
                 )}
                 {item.mvalue == 0 ? (
                   <h1>
                     MYSQL : not Checked <br />
-                    {item.status_mysql.length > 10 ? (
-                      <h1
-                        style={{
-                          fontSize: "1.5rem",
-                          textTransform: "capitalize",
-                          fontWeight: "normal",
-                          color: "red",
-                        }}
-                      >
-                        + {item.status_mysql}
-                      </h1>
-                    ) : (
-                      ""
-                    )}
+                    {item.status_mysql.length > 20
+                      ? `STATUS : ${item.status_mysql}`
+                      : ""}
                   </h1>
                 ) : item.mvalue == null ? (
                   ""
                 ) : (
-                  <h1>
-                    MYSQL : Checked
-                    <br />
-                    {item.status_mysql.length > 10 ? (
-                      <h1
-                        style={{
-                          fontSize: "1.5rem",
-                          textTransform: "capitalize",
-                          fontWeight: "normal",
-                          color: "black",
-                        }}
-                      >
-                        + {item.status_mysql}
-                      </h1>
-                    ) : (
-                      ""
-                    )}
-                  </h1>
+                  <h1>MYSQL : Checked</h1>
                 )}
               </div>
             );

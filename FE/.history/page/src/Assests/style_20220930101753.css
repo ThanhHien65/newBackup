@@ -56,6 +56,12 @@
   table-layout: fixed;
   border-collapse: collapse;
 }
+.content_table table td {
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+}
 .container_content table th {
   font-size: 1.8rem;
   text-transform: uppercase;
@@ -68,9 +74,9 @@
 .container_content table td {
   background-color: #ffff;
   text-align: center;
-  overflow: hidden;
+  /* overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
   padding: 1rem;
   font-size: 1.5rem;
   border-bottom: 1px solid #f2f4f6;
